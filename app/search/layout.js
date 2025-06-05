@@ -1,3 +1,7 @@
+export const metadata = {
+  metadataBase: new URL("https://abisearch.vercel.app"), 
+};
+
 "use client";
 
 import styles from './layout.module.scss'
