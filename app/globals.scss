@@ -1,0 +1,52 @@
+@import '@/app/mixins';
+@import '@/app/variables';
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    ::-webkit-scrollbar {
+        width: 0.4rem;
+
+        @include mobile {
+            width: 0.2rem;
+        }
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--bg)
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--color-3);
+        border-radius: 0.5rem;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--color-2);
+    }
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--color);
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    min-height: 100vh;
+    -webkit-tap-highlight-color: transparent;    
+
+    main{
+        // flex: 1;
+        min-height: 100vh;
+    }
+}
+
+a{
+    color: var(--link-color);
+    text-decoration: none;
+}

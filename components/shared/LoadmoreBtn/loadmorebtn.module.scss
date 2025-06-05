@@ -1,0 +1,32 @@
+@import '@/app/mixins';
+
+.loadmoreBtn {
+
+    button {
+        padding: 0.5rem 2.5rem;
+        font-size: 1.1rem;
+        border-radius: 2rem;
+        background: rgba(var(--link-color), 0.05);
+        border: 2px solid var(--link-color);
+        color: var(--link-color);
+        margin-top: 1.5rem;
+        transition: all 0.3s;
+        box-shadow: var(--box-shadow);
+        cursor: pointer;
+
+        @include mobile {
+            padding: 0.35rem 1rem;
+            font-size: 1rem;
+        }
+
+        &:hover {
+            transform: scale(1.05);
+            background: rgba(var(--link-color), 0.2);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}

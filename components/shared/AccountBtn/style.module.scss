@@ -1,0 +1,36 @@
+@import '@/app/mixins';
+
+.accountBtn {
+    border-radius: 2rem;
+    background: var(--bg);
+    color: var(--color);
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+    border: var(--border-color) solid 1px;
+    transition: all 0.3s;
+    cursor: pointer;
+    float: right;
+
+    &:hover {
+        transform: scale(1.075);
+        box-shadow: var(--box-shadow-hover);
+    }
+
+    img,
+    svg {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+    }
+
+    svg {
+        padding: 6px;
+    }
+
+    .title {
+        padding: 0 1rem;
+        font-size: 1.1rem;
+    }
+}

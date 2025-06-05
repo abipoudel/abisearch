@@ -1,0 +1,50 @@
+@import '@/app/mixins';
+
+.card {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-align: left;
+    display: block;
+    color: var(--color-1);
+
+    &:hover {
+        transform: scale(1.05);
+        .card__image img {
+            box-shadow: var(--box-shadow);
+        } 
+    }
+
+    .card__image {
+        img {
+            width: 100%;
+            border-radius: 0.5rem;
+            box-shadow: var(--box-shadow);
+            border: 1px solid var(--border-color);
+        }
+    }
+
+    &__content {
+        margin-top: 0.5rem;
+
+        .title {
+            font-size: 1rem;
+            font-weight: normal;
+            margin-bottom: 0.3rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+        }
+
+        .snippet {
+            font-size: 0.75rem;
+            color: var(--color-2);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+    }
+}

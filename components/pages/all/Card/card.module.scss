@@ -1,0 +1,60 @@
+@import '@/app/mixins';
+
+.card {
+    // border: 2px solid var(--border-color);
+    @include gradient-border(var(--gradient-2), 0.5rem, 2px);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    width: 72%;
+    max-width: 23rem;
+    margin-top: 1.2rem;
+    margin-left: 7%;
+    text-align: left;
+    box-shadow: var(--box-shadow);
+    position: relative;
+    background: var(--bg);
+
+
+    &.skeleton {
+        border-color: transparent;
+        box-shadow: none;
+
+        &::before {
+            opacity: 0;
+        }
+    }
+
+    @include mobile {
+        @include gradient-border(var(--gradient-2), 0.5rem, 1px);
+        margin-left: 0;
+        width: 100%;
+        grid-row: 1;
+        border-width: 1px;
+        padding: 0.6rem;
+    }
+
+    img {
+        width: 98%;
+        display: block;
+        margin: auto;
+        max-height: 15rem;
+        border-radius: 0.5rem;
+        box-shadow: var(--box-shadow);
+    }
+
+    .title {
+        margin-top: 0.75rem;
+        font-weight: normal;
+        @include gradient-text(var(--gradient-2));
+
+        @include mobile {
+            font-size: 1.5rem;
+        }
+    }
+
+    .content {
+        color: var(--color-2);
+        font-size: 0.9rem;
+        margin-top: 1rem;
+    }
+}
