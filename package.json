@@ -11,6 +11,7 @@
   "dependencies": {
     "@next-auth/mongodb-adapter": "^1.1.1",
     "axios": "^1.4.0",
+    "debug": "^4.4.1",
     "lodash": "^4.17.21",
     "mongodb": "^5.9.2",
     "next": "^13.4.7",
