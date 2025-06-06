@@ -1,0 +1,132 @@
+@import '@/app/mixins';
+
+.searchBar {
+    width: 95%;
+    margin: 0 auto;
+    max-width: 45rem;
+    position: relative;
+    border-radius: 5rem;
+    background: transparent;
+    border: 2px solid rgba(#808080, 0.65);
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s;
+    background: var(--bg-1);
+
+    &:focus-within {
+        $border-color: #4dafff;
+        border-color: darken($border-color, 10%);
+
+        button {
+            background: darken($border-color, 20%);
+
+            &:hover {
+                background: darken($border-color, 30%);
+            }
+
+            svg {
+                fill: var(--color);
+            }
+        }
+    }
+
+    &__open:focus-within {
+        border-radius: 1rem 1rem 0 0;
+
+        button{
+            border-radius:  0.125rem 0.75rem 0.125rem 0.125rem;
+        }
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+
+        input {
+            width: 100%;
+            font-size: 1.5rem;
+            color: var(--color);
+            padding: 0.65rem 0.65rem .65rem 2rem;
+            background: transparent;
+            border: none;
+
+            @include mobile {
+                font-size: 1.125rem;
+                padding: 0.5rem 0.5rem .5rem 1.5rem;
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        button {
+            border: none;
+            border-radius: 5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: transparent;
+            overflow: hidden;
+            margin: 0.1rem;
+            transition: all .3s;
+            cursor: pointer;
+
+            svg {
+                width: 3rem;
+                height: 1.25rem;
+                fill: var(--color-3);
+
+                @include mobile {
+                    width: 2.8rem;
+                    height: 1.15rem;
+                }
+            }
+        }
+    }
+
+    .suggestionsContainer {
+        background: var(--bg-1);
+        max-height: 14rem;
+        overflow: hidden scroll;
+        position: absolute;
+        top: 101%;
+        width: 100%;
+        left: 0;
+        border-radius: 0 0 0.5rem 0.5rem;
+        z-index: 2;
+        box-shadow: var(--box-shadow-hover);
+        transition: all 0.2s;
+
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        &__open {
+            border: 1px solid var(--border-color);
+        }
+
+        .suggestion {
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+            text-align: left;
+            cursor: pointer;
+            color: var(--color-2);
+
+            @include mobile {
+                font-size: 1rem;
+            }
+
+            .searchIcon {
+                font-size: 1rem;
+                fill: var(--color-3);
+                margin-right: 0.5rem;
+            }
+        }
+
+        .suggestionHighlighted {
+            background: #000;
+            color: var(--link-color);
+        }
+    }
+}

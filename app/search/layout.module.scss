@@ -1,0 +1,102 @@
+@import "@/app/mixins";
+
+.header {
+    display: grid;
+    grid-template-columns: 9% 40rem auto;
+    grid-template-rows: 1fr;
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+    grid-gap: 1rem;
+    background-color: var(--bg-1);
+    box-shadow: var(--box-shadow);
+    border-bottom: 1px solid rgba(var(--border-color), 0.5);
+    transition: all 0.3s;
+
+    @include mobile {
+        grid-template-columns: 1fr 1fr;
+        padding: 0.5rem;
+        row-gap: 2rem;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 1.2rem;
+        font-size: 1rem;
+
+        a {
+            color: var(--color-1);
+            text-decoration: none;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            gap: 0.25rem;
+            transition: all 0.3s;
+
+
+            @include mobile {
+                flex-direction: column;
+                gap: unset;
+            }
+
+            &:hover {
+                color: var(--color);
+                transform: scale(1.075);
+            }
+
+            &.active {
+                color: var(--link-color);
+                font-weight: bold;
+            }
+        }
+    }
+
+    .container__logo {
+
+        @include mobile {
+            text-align: left;
+            padding-left: 0.5rem;
+        }
+
+        .logo {
+            @include gradient-text(var(--gradient-1));
+            font-family: "Railway", sans-serif;
+            margin-top: 0.75rem;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+            // width: 90%;
+
+            &:hover{
+                transform: scale(1.1);
+            }
+
+            @include mobile {
+                margin-top: 0.25rem;
+            }
+        }
+    }
+
+    .container__account {
+        padding-right: 2rem;
+
+        @include mobile {
+            padding-right: 0.5rem;
+        }
+    }
+
+    .container__search {
+        @include mobile {
+            grid-column: span 2;
+            grid-row: 2;
+        }
+    }
+}
+
+.container__content {
+    padding-top: 1rem;
+    margin: 0 10%;
+
+    @include mobile {
+        margin: 0 4%;
+    }
+}

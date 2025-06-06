@@ -1,0 +1,14 @@
+@import "@/app/mixins";
+
+.searchPage {
+    display: grid;  
+    grid-template-columns: 2fr 1.4fr;
+
+    @include mobile {
+        grid-template-columns: 1fr;
+        
+        .results__container{
+            grid-row: 2;
+        }
+    }
+}

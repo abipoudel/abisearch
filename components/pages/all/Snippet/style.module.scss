@@ -1,0 +1,88 @@
+@import '@/app/mixins';
+
+.resultsSnippet {
+    text-decoration: none;
+    background: transparent;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease-in-out;
+    color: var(--color-1);
+    text-align: left;
+    padding: 1rem;
+    margin: 1rem 0;
+    cursor: pointer;
+    display: block;
+
+    @include mobile {
+        margin: 0.75rem 0;
+        padding: 0.5rem;
+    }
+
+    &:hover {
+        background: var(--bg-2);
+        box-shadow: var(--box-shadow);
+        transform: scale(1.01);
+    }
+
+    .head {
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .favicon {
+            width: 1rem;
+            margin-right: 0.5rem;
+            border-radius: 50%;
+        }
+
+        .url {
+            width: 100%;
+            color: var(--color-1);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .body {
+        .title {
+            color: var(--link-color);
+            font-weight: normal;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            word-break: break-word;
+            // @include gradient-text(var(--gradient-3));
+
+            @include mobile {
+                font-size: 1.15rem;
+            }
+        }
+
+        .snippet {
+            font-size: 0.9rem;
+            color: var(--color-3);
+            word-break: break-word;
+        }
+    }
+
+    .cse {
+        height: 6rem;
+        border-radius: 1rem;
+        margin-left: 2rem;
+        box-shadow: var(--box-shadow);
+
+        @include mobile {
+            display: none;
+        }
+    }
+}

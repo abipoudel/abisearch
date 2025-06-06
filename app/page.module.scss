@@ -1,0 +1,42 @@
+@import '@/app/mixins';
+
+.accountBtn_container{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.logo {
+  // font-family: "Raleway", sans-serif;
+  // font-weight: lighter;
+  // font-size: 8rem;
+  color: #fff;
+  margin-top: 15vh;
+  margin-bottom: -3.25rem;
+  max-width: 40rem;
+
+  @include mobile {
+    width: 92%;
+    font-size: 3.5rem;
+    margin-top: 25vh;
+    margin-bottom: -1.5rem;
+  }
+}
+
+.tagline {
+  font-weight: lighter;
+  font-size: 2rem;
+  color: var(--color);
+  text-decoration: none;
+  margin-top: 0rem;
+  letter-spacing: 2px;
+  margin-bottom: 6rem;
+  padding: 0 0.75rem;
+  font-family: "Raleway", sans-serif;
+
+  @include mobile {
+    font-size: 1rem;
+    margin-bottom: 6rem;
+    letter-spacing: 1px;
+  }
+}
