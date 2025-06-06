@@ -6,6 +6,7 @@ import { ThemeProvider } from '@/context/ThemeContext';
 
 export const metadata = {
   title: 'abisearch',
+  metadataBase: new URL("https://abisearch.vercel.app"),
   description: 'Effortlessly explore the web',
   keywords: ['Next.js', 'React', 'JavaScript'],
   authors: [{ name: 'abipoudel', url: 'https://github.com/abipoudel' }],
